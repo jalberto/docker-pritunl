@@ -13,5 +13,5 @@
 ```bash
 docker run -d --privileged --name Pritunl \
   -p 1194:1194/udp -p 1194:1194/tcp -p 9700:9700/tcp \
-  michelkaeser/pritunl
+  michelkaeser/docker-pritunl
 ```
