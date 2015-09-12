@@ -25,4 +25,4 @@ RUN yum clean all
 # meta
 CMD /usr/local/bin/pritunl.sh
 EXPOSE 1194/udp 1194/tcp 9700/tcp
-VOLUME /var/lib/pritunl
+VOLUME /var/lib/mongodb /var/lib/pritunl
