@@ -21,6 +21,7 @@ RUN chmod +x /usr/local/bin/pritunl.sh
 
 # cleanup
 RUN yum clean all
+RUN rm -rf /var/tmp/* /tmp/*
 
 # meta
 CMD /usr/local/bin/pritunl.sh
