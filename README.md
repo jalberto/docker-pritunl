@@ -14,8 +14,8 @@
 
 ```bash
 docker run -d --privileged --name Pritunl \
-  -p 1194:1194/udp -p 1194:1194/tcp -p 9700:9700/tcp \
+  -p 1194:1194/udp -p 1194:1194/tcp -p 443:443/tcp \
   michelkaeser/docker-pritunl
 ```
 
-The admin console is available at `https://<ip>:9700` afterwards.
+The admin console is available at `https://<ip>` afterwards.

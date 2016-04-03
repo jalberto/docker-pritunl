@@ -25,5 +25,5 @@ RUN rm -rf /var/tmp/* /tmp/*
 
 # meta
 CMD /usr/local/bin/pritunl.sh
-EXPOSE 1194/udp 1194/tcp 9700/tcp
+EXPOSE 1194/udp 1194/tcp 443/tcp
 VOLUME /var/lib/mongodb /var/lib/pritunl
