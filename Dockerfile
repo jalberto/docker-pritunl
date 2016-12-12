@@ -11,7 +11,9 @@ COPY mongo.repo /etc/yum.repos.d/mongo.repo
 RUN \
     gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 7568D9BB55FF9E5287D586017AE645C0CF8E292A && \
     gpg --armor --export 7568D9BB55FF9E5287D586017AE645C0CF8E292A > key.tmp; rpm --import key.tmp; rm -f key.tmp && \
-    yum upgrade -y && yum install -y pritunl mongodb-org
+    yum upgrade -y && yum install -y mongodb-org
+
+RUN yum install -y pritunl
 
 # use predefined Pritunl config for local MongoDB server
 COPY pritunl.conf /etc/pritunl.conf
@@ -25,5 +27,5 @@ RUN \
 
 # meta
 CMD /usr/local/bin/pritunl.sh
-EXPOSE 1194/udp 1194/tcp 443/tcp 9700/tcp 80/tcp
+EXPOSE 1194/udp 1194/tcp 443/tcp 80/tcp
 VOLUME /var/lib/mongodb /var/lib/pritunl
